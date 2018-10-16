@@ -1,0 +1,49 @@
+# ============================ #
+# Unity Project #
+# ============================ #
+Breakout/[Tt]emp/*
+Breakout/[Oo]bj/*
+Breakout/[Uu]nity[Gg]enerated/*
+Breakout/[Ll]ibrary/*
+Breakout/[Ee]tc/*
+Breakout/[Bb]uild/*
+Breakout/[Bb]uilds/*
+
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+Breakout/[Ee]xported[Oo]bj/
+Breakout/*.svd
+Breakout/*.userprefs
+Breakout/*.csproj
+Breakout/*.pidb
+Breakout/*.suo
+Breakout/*.sln
+Breakout/*.user
+Breakout/*.unityproj
+Breakout/*.booproj
+Breakout/.vs/*
+
+# ============ #
+# Plugins      #
+# ============ #
+
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+*.csproj
+*.sln
+*.stackdump
+Icon?
+ehthumbs.db
+[Tt]]humbs.db
+[Dd]esktop.ini
+Builds
+sysinfo.txt
+*.unitypackage
+*.unitypackage.meta
