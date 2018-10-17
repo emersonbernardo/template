@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 286f91d78e358fa4b92354488ce82b2f, type: 3}
+  m_Name: PaddleConfig
+  m_EditorClassIdentifier: 
+  speed: 10
+  rightEdgeScreen: 11.57
+  leftEdgeScreen: -11.57
