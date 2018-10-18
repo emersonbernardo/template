@@ -5,30 +5,44 @@ using UnityEngine;
 public class BallScript : MonoBehaviour {
 
     private Rigidbody2D rb;
-    private bool inPlay;
     [SerializeField]
-    private Transform paddle;
+    private Transform ballRespawnPoint;
+
+    [SerializeField]
+    private BallConfig ballConfig;
 
     private void Awake()
     {
+        ballConfig.inPlay = false;
         rb = GetComponent<Rigidbody2D>();
-    }
-
-    private void Start()
-    {
-        rb.AddForce(Vector2.up * 500);
     }
 
     private void Update()
     {
-        
+        if (!ballConfig.inPlay)
+            transform.position = ballRespawnPoint.position;
+
+        if (Input.GetButtonDown("Jump") && !ballConfig.inPlay)
+        {
+            ballConfig.inPlay = true;
+            rb.AddForce(Vector2.up * ballConfig.speed);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("BottomCollider"))
         {
-            Debug.Log("Ball hit the bottom of the screen");
+            rb.velocity = Vector2.zero;
+            ballConfig.inPlay = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.transform.CompareTag("RedBrick"))
+        {
+            Destroy(other.gameObject);
         }
     }
 }

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe33a2a93b23cc74c9fc48b2f99f8764, type: 3}
+  m_Name: Level1
+  m_EditorClassIdentifier: 
+  level: 1
+  brickCount: 11
+  playerLives: 0
+  scorePerBrick: 0

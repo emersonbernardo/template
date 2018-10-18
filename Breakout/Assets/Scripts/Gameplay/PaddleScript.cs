@@ -7,11 +7,6 @@ public class PaddleScript : MonoBehaviour {
     [SerializeField]
     private PaddleConfig paddleConfig;
 
-    private void Start()
-    {
-        
-    }
-
     private void Update()
     {
         float horizontal = Input.GetAxis("Horizontal");
