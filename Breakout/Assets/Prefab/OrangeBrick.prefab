@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4583804118528442}
   - component: {fileID: 212530750949571292}
   - component: {fileID: 61747186652711182}
+  - component: {fileID: 114056093288881910}
   m_Layer: 0
   m_Name: OrangeBrick
   m_TagString: Untagged
@@ -34,8 +35,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1370985858506932}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.038, y: 1.7000003, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.992002, y: 1.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -66,6 +67,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.92, y: 0.64}
   m_EdgeRadius: 0
+--- !u!114 &114056093288881910
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1370985858506932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 449279845a57f6749955fe8abdc23762, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currBrickState: 0
+  brickConfig: {fileID: 11400000, guid: 53b9214eb36bf69408c4fde23c9c8b1e, type: 2}
 --- !u!212 &212530750949571292
 SpriteRenderer:
   m_ObjectHideFlags: 1

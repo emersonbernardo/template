@@ -16,17 +16,21 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     private TextMeshProUGUI scoreTxt;
     [SerializeField]
+    private TextMeshProUGUI promptTxt;
+    [SerializeField]
     private GameObject playBtn;
+    [SerializeField]
+    private GameObject tryAgainBtn;
 
     //[SerializeField]
     //private LevelConfig level;
 
     [SerializeField]
     private int playerLives;
-    public int PlayerLives{
-        get { return playerLives; }
-        set { playerLives = value; }
-    }
+    //public int PlayerLives{
+    //    get { return playerLives; }
+    //    set { playerLives = value; }
+    //}
 
     private int playerScore;
     public int PlayerScore
@@ -39,8 +43,7 @@ public class GameManager : MonoBehaviour {
 
     private void Awake()
     {
-        playerLives = 3;
-        curLevel = 1;
+        InitValues();
         if (Instance == null)
         {
             Instance = this;
@@ -53,16 +56,49 @@ public class GameManager : MonoBehaviour {
 
     private void Start()
     {
-        livesTxt.text = "Lives: " + PlayerLives;
-        scoreTxt.text = "Score: " + PlayerScore;
-        levelTxt.text = curLevel.ToString();
+        tryAgainBtn.SetActive(false);
     }
 
     public void OnPressPlay()
     {
         OnStartGame();
         playBtn.SetActive(false);
+        tryAgainBtn.SetActive(false);
+        promptTxt.gameObject.SetActive(false);
+        InitValues();
     }
+
+    public void InitValues()
+    {
+        playerLives = 3;
+        curLevel = 1;
+        PlayerScore = 0;
+
+        livesTxt.text = "Lives: " + playerLives;
+        scoreTxt.text = "Score: " + PlayerScore;
+        levelTxt.text = curLevel.ToString();
+    }
+
+    public void AddPoints(int points)
+    {
+        PlayerScore += points;
+        scoreTxt.text = "Score: " + PlayerScore;
+    }
+
+    public void DeductLives()
+    {
+        playerLives--;
+        livesTxt.text = "Lives: " + playerLives;
+
+        if (playerLives <= 0)
+        {
+            promptTxt.gameObject.SetActive(true);
+            promptTxt.text = "GAME OVER!!!";
+            tryAgainBtn.SetActive(true);
+        }
+    }
+
+
 
     //public GameObject brick;
 

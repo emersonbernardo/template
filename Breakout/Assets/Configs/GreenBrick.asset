@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ec5cfc255e1ee4da9e7c625aec8b3d, type: 3}
+  m_Name: GreenBrick
+  m_EditorClassIdentifier: 
+  weakenedSprite: {fileID: 21300000, guid: dccdcc9428496f848a7e063791982e60, type: 3}
+  untouchedSprite: {fileID: 21300000, guid: 1b9c106cc9b477144972e205478b072d, type: 3}
+  brickLife: 2
+  brickPoints: 1

@@ -55,6 +55,7 @@ public class BrickScript : MonoBehaviour {
                 break;
             case BrickState.DESTROYED:
                 Destroy(this.gameObject);
+                GameManager.Instance.AddPoints(brickConfig.brickPoints);
                 break;
         }
     }

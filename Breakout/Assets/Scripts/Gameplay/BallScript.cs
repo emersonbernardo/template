@@ -46,6 +46,7 @@ public class BallScript : MonoBehaviour {
         {
             rb.velocity = Vector2.zero;
             ballConfig.inPlay = false;
+            GameManager.Instance.DeductLives();
         }
     }
 
