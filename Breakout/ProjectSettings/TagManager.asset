@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - BottomCollider
-  - RedBrick
+  - Ball
   layers:
   - Default
   - TransparentFX

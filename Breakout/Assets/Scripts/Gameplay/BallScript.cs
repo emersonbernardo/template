@@ -7,13 +7,24 @@ public class BallScript : MonoBehaviour {
     private Rigidbody2D rb;
     [SerializeField]
     private Transform ballRespawnPoint;
-
     [SerializeField]
     private BallConfig ballConfig;
+    private bool firstStart;
+
+    private void OnEnable()
+    {
+        GameManager.OnStartGame += StartGame;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnStartGame -= StartGame;
+    }
 
     private void Awake()
     {
         ballConfig.inPlay = false;
+        firstStart = true;
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -22,7 +33,7 @@ public class BallScript : MonoBehaviour {
         if (!ballConfig.inPlay)
             transform.position = ballRespawnPoint.position;
 
-        if (Input.GetButtonDown("Jump") && !ballConfig.inPlay)
+        if ( (!firstStart) && (Input.GetButtonDown("Jump") && !ballConfig.inPlay) )
         {
             ballConfig.inPlay = true;
             rb.AddForce(Vector2.up * ballConfig.speed);
@@ -38,11 +49,10 @@ public class BallScript : MonoBehaviour {
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    public void StartGame()
     {
-        if (other.transform.CompareTag("RedBrick"))
-        {
-            Destroy(other.gameObject);
-        }
+        firstStart = false;
+        ballConfig.inPlay = true;
+        rb.AddForce(Vector2.up * ballConfig.speed);
     }
 }
